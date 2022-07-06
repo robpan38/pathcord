@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg" xmlns:bx="https://boxy-svg.com">
+  <path d="M 257.736 14.594 L 425.734 142.812 L 257.736 142.812 L 257.736 14.594 Z" style="paint-order: stroke; fill: rgb(241, 70, 26); stroke: rgb(0, 0, 0); stroke-width: 2px;" transform="matrix(0.785193, -0.619252, 0.583143, 0.81367, -29.585516, 234.285248)" bx:shape="triangle 257.736 14.594 167.998 128.218 0 0 1@b7e2536c" bx:origin="0.433 0.567"/>
+  <rect x="145.137" y="162.578" width="193.911" height="138.93" style="fill: rgb(241, 70, 26); stroke: rgb(0, 0, 0);"/>
+  <rect x="145.138" y="190.889" width="193.911" height="47.295" style="fill: rgb(29, 87, 173); stroke: rgb(0, 0, 0);"/>
+  <rect x="172.923" y="200.939" width="33.107" height="36.654" style="fill: rgb(255, 255, 255); stroke: rgb(0, 0, 0);"/>
+  <rect x="264.558" y="190.298" width="33.107" height="47.887" style="fill: rgb(255, 255, 255); stroke: rgb(0, 0, 0);"/>
+  <rect x="181.791" y="217.493" width="15.371" height="20.1" style="stroke: rgb(0, 0, 0);"/>
+  <rect x="274.017" y="214.537" width="15.962" height="23.648" style="stroke: rgb(0, 0, 0);"/>
+  <rect x="229.087" y="274.247" width="83.358" height="0.739" style="fill: rgb(216, 216, 216); stroke: rgb(0, 0, 0);"/>
+  <rect x="311.853" y="260.058" width="0.591" height="14.189" style="fill: rgb(216, 216, 216); stroke: rgb(0, 0, 0);"/>
+</svg>
