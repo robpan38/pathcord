@@ -1,0 +1,24 @@
+{
+  "dependencies": {
+    "express": "^4.18.1"
+  },
+  "scripts": {
+    "start": "node server.js"
+  },
+  "name": "pathcord",
+  "description": "mihnea &amp; mine implementam o idee complet originala care ne va face miliardari",
+  "version": "1.0.0",
+  "main": "server.js",
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/robpan38/pathcord.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/robpan38/pathcord/issues"
+  },
+  "homepage": "https://github.com/robpan38/pathcord#readme"
+}

@@ -9,4 +9,9 @@
   <rect x="274.017" y="214.537" width="15.962" height="23.648" style="stroke: rgb(0, 0, 0);"/>
   <rect x="229.087" y="274.247" width="83.358" height="0.739" style="fill: rgb(216, 216, 216); stroke: rgb(0, 0, 0);"/>
   <rect x="311.853" y="260.058" width="0.591" height="14.189" style="fill: rgb(216, 216, 216); stroke: rgb(0, 0, 0);"/>
+  <rect x="-848.577" y="-40.067" width="4.472" height="44.726" style="stroke: rgb(0, 0, 0); fill: rgb(241, 70, 26);" transform="matrix(-1, 0, -0.728571, 1, -549.511642, 81.624849)"/>
+  <rect x="52.449" y="20.112" width="2.878" height="25.937" style="stroke: rgb(0, 0, 0); fill: rgb(241, 70, 26);" transform="matrix(-0.62703, -0.778995, -0.778995, 0.62703, 408.065558, 50.00679)"/>
+  <rect x="52.449" y="20.112" width="2.878" height="25.937" style="stroke: rgb(0, 0, 0); fill: rgb(241, 70, 26);" transform="matrix(0.778995, -0.62703, -0.62703, -0.778995, 319.80007, 118.261874)"/>
+  <rect x="52.449" y="20.112" width="2.878" height="25.937" style="stroke: rgb(0, 0, 0); fill: rgb(241, 70, 26);" transform="matrix(0.778995, -0.62703, -0.62703, -0.778995, 290.728171, 82.481041)"/>
+  <rect x="-52.449" y="-20.112" width="2.878" height="25.937" style="stroke: rgb(0, 0, 0); fill: rgb(241, 70, 26);" transform="matrix(-0.62703, -0.778995, -0.778995, 0.62703, 262.487704, 20.463873)"/>
 </svg>
