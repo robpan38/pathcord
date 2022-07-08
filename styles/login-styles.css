@@ -89,3 +89,17 @@ body {
     text-transform: uppercase;
     font-family: 'MuseoModerno', cursive;
 }
+
+.active-login-btn {
+    background-color: rgb(36, 164, 36);
+    color: white;
+    cursor: pointer;
+}
+
+.active-login-btn:hover {
+    background-color: rgb(43, 190, 43);
+}
+
+.active-login-btn:active {
+    background-color: rgb(21, 94, 21);
+}
