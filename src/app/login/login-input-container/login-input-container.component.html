@@ -1,0 +1,7 @@
+<div class="login-input-container">
+    <input class="login-input-field" placeholder="Enter username here..."
+        (input)="onInput()" name="loginInput" [(ngModel)]="inputValue" />
+    <button class="login-btn" (click)="goToChat()" [className]="inputIsValid ? 'active-login-btn' : ''">
+        Login
+    </button>
+</div>
