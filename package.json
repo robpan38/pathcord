@@ -1,9 +1,9 @@
 {
   "dependencies": {
-    "express": "^4.18.1",
-    "typescript": "^4.7.4"
+    "express": "^4.18.1"
   },
   "scripts": {
+    "compile": "tsc scripts/loginLogic.ts --outDir dist",
     "start": "node server.js"
   },
   "name": "pathcord",
@@ -20,5 +20,8 @@
   "bugs": {
     "url": "https://github.com/robpan38/pathcord/issues"
   },
-  "homepage": "https://github.com/robpan38/pathcord#readme"
+  "homepage": "https://github.com/robpan38/pathcord#readme",
+  "devDependencies": {
+    "typescript": "^4.7.4"
+  }
 }
