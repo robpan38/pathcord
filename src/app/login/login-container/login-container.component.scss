@@ -1,27 +1,4 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-html, body {
-    height: 100%;
-    width: 100%;
-    font-family: 'MuseoModerno', cursive;
-}
-
-body {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-app-logo-container {
-    background-color: black;
-}
-
-.login-container {
-    /* border: solid 1px black; */
+:host {
     height: 60%;
     width: 50%;
     
@@ -32,78 +9,12 @@ app-logo-container {
     row-gap: 5%;
 }
 
-.logo-container {
-    /* border: solid 1px black; */
+app-logo-container {
     width: 90%;
     height: 60%;
-
-    display: flex;
-    justify-content: center;
-    align-items: flex-end;
 }
 
-.logo-text {
-    font-size: 2.5rem;
-    text-transform: uppercase;
-    text-align: center;
-    padding-left: 10%;
-    color: rgb(241, 70, 26);
-}
-.logo-text span {
-    color: rgb(29, 87, 173);
-}
-
-.logo-img {
-    align-self: flex-start;
-    margin-top: 17%;
-    height: 80%;
-    width: 50%;
-    /* font-size: 2rem; */
-}
-
-.login-input-container {
+app-login-input-container {
     height: 30%;
     width: 90%;
-    
-    display: flex;
-    justify-content: center;
-    /* border: solid 1px black; */
-}
-
-.login-input-field {
-    height: 40%;
-    width: 60%;
-
-    border-radius: 0;
-    border-width: 1px;
-
-    font-size: 1.3rem;
-    padding-left: 2%;
-    font-family: 'MuseoModerno', cursive;
-}
-
-.login-btn {
-    height: 40%;
-    width: 25%;
-    
-    border-radius: 0;
-    border-width: 0;
-
-    font-size: 1.3rem;
-    text-transform: uppercase;
-    font-family: 'MuseoModerno', cursive;
-}
-
-.active-login-btn {
-    background-color: rgb(36, 164, 36);
-    color: white;
-    cursor: pointer;
-}
-
-.active-login-btn:hover {
-    background-color: rgb(43, 190, 43);
-}
-
-.active-login-btn:active {
-    background-color: rgb(21, 94, 21);
 }
