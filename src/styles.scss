@@ -5,6 +5,11 @@
     box-sizing: border-box;
 }
 
+:root {
+    --pretty-orange: rgb(241, 70, 26);
+    --black: rgb(0, 0, 0);
+}
+
 html, body, app-root {
     height: 100%;
     width: 100%;

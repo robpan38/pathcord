@@ -1,0 +1,40 @@
+.user-container {
+    height: 10%;
+    width: 100%;
+
+    border: 1px solid var(--black);
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.user-pic {
+    height: 100%;
+    width: 20%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.user-pic-img {
+    height: 90%;
+    width: 90%;
+
+    border-radius: 50%;
+}
+
+.user-name {
+    height: 100%;
+    width: 77%;
+
+    display: flex;
+    align-items: center;
+
+    font-size: 30px;
+    text-align: left;
+    color: var(--black);
+    white-space: nowrap;
+    overflow: hidden;
+}
