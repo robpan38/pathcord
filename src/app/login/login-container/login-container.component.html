@@ -1,3 +1,9 @@
 <app-logo-container></app-logo-container>
 
-<app-login-input-container></app-login-input-container>
+<app-login-input-container
+    [inputValue]="inputValue"
+    [inputIsValid]="inputIsValid"
+    (onInputEvent)="validateInput($event)"
+    (onClickEvent)="goToChat()"
+>
+</app-login-input-container>
