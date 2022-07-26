@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "G5s8HqpmrC5gau7ae50B3qkSeH7b0Qs61zRLHiy+bxJH2boeWs8ZuwmwLxcZjnmLVNLP6weM0b3o6AY6G50jKQ==",
+  "dgSpecHash": "/+6Ic22ot6eSvKw3DFyWZuzw7dYe6fPtcao+AE6HnpOPl+9nmz5+vie39kZOLeYXr9+ujRO6neD5OgqHghv5ng==",
   "success": true,
-  "projectFilePath": "C:\\work\\Pathcord\\PathcordBackend\\PathcordBackend\\PathcordBackend.csproj",
+  "projectFilePath": "C:\\work\\Pathcord\\git\\pathcord\\PathcordBackend\\PathcordBackend\\PathcordBackend.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\eduard.antica\\.nuget\\packages\\automapper\\11.0.0\\automapper.11.0.0.nupkg.sha512",
     "C:\\Users\\eduard.antica\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\11.0.0\\automapper.extensions.microsoft.dependencyinjection.11.0.0.nupkg.sha512",

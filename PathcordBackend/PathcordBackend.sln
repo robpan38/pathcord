@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.2.32616.157
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PathcordBackend", "PathcordBackend\PathcordBackend.csproj", "{276B54EA-256D-45E6-BDD2-B0D16550533D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PathcordBackend", "PathcordBackend\PathcordBackend.csproj", "{276B54EA-256D-45E6-BDD2-B0D16550533D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PathcordBackend.Test", "PathcordBackend.Test\PathcordBackend.Test.csproj", "{87025028-B056-49A8-A67E-5A4DEC15766A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{276B54EA-256D-45E6-BDD2-B0D16550533D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{276B54EA-256D-45E6-BDD2-B0D16550533D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{276B54EA-256D-45E6-BDD2-B0D16550533D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{87025028-B056-49A8-A67E-5A4DEC15766A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{87025028-B056-49A8-A67E-5A4DEC15766A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{87025028-B056-49A8-A67E-5A4DEC15766A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{87025028-B056-49A8-A67E-5A4DEC15766A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

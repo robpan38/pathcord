@@ -2121,11 +2121,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\work\\Pathcord\\PathcordBackend\\PathcordBackend\\PathcordBackend.csproj",
+      "projectUniqueName": "C:\\work\\Pathcord\\git\\pathcord\\PathcordBackend\\PathcordBackend\\PathcordBackend.csproj",
       "projectName": "PathcordBackend",
-      "projectPath": "C:\\work\\Pathcord\\PathcordBackend\\PathcordBackend\\PathcordBackend.csproj",
+      "projectPath": "C:\\work\\Pathcord\\git\\pathcord\\PathcordBackend\\PathcordBackend\\PathcordBackend.csproj",
       "packagesPath": "C:\\Users\\eduard.antica\\.nuget\\packages\\",
-      "outputPath": "C:\\work\\Pathcord\\PathcordBackend\\PathcordBackend\\obj\\",
+      "outputPath": "C:\\work\\Pathcord\\git\\pathcord\\PathcordBackend\\PathcordBackend\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\eduard.antica\\AppData\\Roaming\\NuGet\\NuGet.Config",
