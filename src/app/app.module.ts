@@ -1,17 +1,32 @@
+import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { LoginInputContainerComponent } from './login/login-input-container/login-input-container.component';
-import { LogoContainerComponent } from './login/logo-container/logo-container.component';
-import { LoginContainerComponent } from './login/login-container/login-container.component';
-import { FormsModule } from '@angular/forms';
+import {
+  AppContainerComponent,
+} from './chat/app-container/app-container.component';
+import {
+  ChatContainerComponent,
+} from './chat/app-container/chat-container/chat-container.component';
+import {
+  UsersContainerComponent,
+} from './chat/app-container/users-container/users-container.component';
 import { ChatComponent } from './chat/chat.component';
-import { AppContainerComponent } from './chat/app-container/app-container.component';
-import { HeaderContainerComponent } from './chat/header-container/header-container.component';
-import { ChatContainerComponent } from './chat/app-container/chat-container/chat-container.component';
-import { UsersContainerComponent } from './chat/app-container/users-container/users-container.component';
+import {
+  HeaderContainerComponent,
+} from './chat/header-container/header-container.component';
+import {
+  LoginContainerComponent,
+} from './login/login-container/login-container.component';
+import {
+  LoginInputContainerComponent,
+} from './login/login-input-container/login-input-container.component';
+import {
+  LogoContainerComponent,
+} from './login/logo-container/logo-container.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +43,7 @@ import { UsersContainerComponent } from './chat/app-container/users-container/us
   imports: [
     BrowserModule,
     AppRoutingModule,
+    HttpClientModule,
     FormsModule
   ],
   providers: [],
