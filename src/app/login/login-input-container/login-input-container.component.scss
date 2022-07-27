@@ -1,0 +1,45 @@
+.login-input-container {
+    height: 100%;
+    width: 100%;
+    
+    display: flex;
+    justify-content: center;
+}
+
+.login-input-field {
+    height: 40%;
+    width: 60%;
+
+    border-radius: 0;
+    border-width: 1px;
+
+    font-size: 1.05rem;
+    padding-left: 2%;
+    font-family: 'MuseoModerno', cursive;
+}
+
+.login-btn {
+    height: 40%;
+    width: 25%;
+    
+    border-radius: 0;
+    border-width: 0;
+
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    font-family: 'MuseoModerno', cursive;
+}
+
+.active-login-btn {
+    background-color: rgb(36, 164, 36);
+    color: white;
+    cursor: pointer;
+}
+
+.active-login-btn:hover {
+    background-color: rgb(43, 190, 43);
+}
+
+.active-login-btn:active {
+    background-color: rgb(21, 94, 21);
+}
