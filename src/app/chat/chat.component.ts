@@ -4,20 +4,33 @@ import {
   OnInit,
 } from '@angular/core';
 
-const baseUrl: string = 'https://localhost:7234/api/1/channels';
+import { Observable } from 'rxjs';
+
+import { Channel } from '../shared/interfaces/channel';
+import { ChannelsService } from '../shared/services/channels/channels.service';
+
+const baseUrl: string = 'https://swapi.dev/api/people/1'; // 'https://localhost:7234/api/1/channels';
 @Component({
   selector: 'app-chat',
   templateUrl: './chat.component.html',
   styleUrls: ['./chat.component.scss']
 })
 export class ChatComponent implements OnInit {
-  constructor( private http: HttpClient ) { }
+  channels$: Observable<Channel[]>;
+
+  constructor( private http: HttpClient, private channelsService: ChannelsService ) { }
 
   ngOnInit(): void {
+    this.loadChannels();
+
     this.http.get(baseUrl)
       .subscribe(
         (result) => console.log(result)
       )
+  }
+
+  private loadChannels(): void {
+    this.channels$ = this.channelsService.getAllChannels();
   }
 
 }
