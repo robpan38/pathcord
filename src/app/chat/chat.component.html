@@ -1,4 +1,5 @@
 <app-header-container class="header-container"></app-header-container>
 
 <app-app-container class="app-container"
-                   [channels]="channels$ | async"></app-app-container>
+                   [channels]="channels$ | async"
+                   (onChannelSelected)="selectChannel($event)"></app-app-container>

@@ -22,11 +22,10 @@ export class ChatComponent implements OnInit {
 
   ngOnInit(): void {
     this.loadChannels();
+  }
 
-    this.http.get(baseUrl)
-      .subscribe(
-        (result) => console.log(result)
-      )
+  protected selectChannel(channel: Channel) {
+    console.log('i\'m here :)', channel);
   }
 
   private loadChannels(): void {

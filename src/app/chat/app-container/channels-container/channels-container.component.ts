@@ -9,11 +9,11 @@ import {
 import { Channel } from 'src/app/shared/interfaces/channel';
 
 @Component({
-  selector: 'app-app-container',
-  templateUrl: './app-container.component.html',
-  styleUrls: ['./app-container.component.scss']
+  selector: 'app-channels-container',
+  templateUrl: './channels-container.component.html',
+  styleUrls: ['./channels-container.component.scss']
 })
-export class AppContainerComponent implements OnInit {
+export class ChannelsContainerComponent implements OnInit {
   @Input() channels: Channel[] = [];
   @Output() onChannelSelected = new EventEmitter<Channel>();
 
