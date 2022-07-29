@@ -12,6 +12,7 @@ import { Message } from 'src/app/shared/interfaces/message';
   styleUrls: ['./chat-container.component.scss']
 })
 export class ChatContainerComponent implements OnInit {
+  @Input() currentUserId: number = 1;
   @Input() messages: Message[] = [];
 
   constructor() { }
