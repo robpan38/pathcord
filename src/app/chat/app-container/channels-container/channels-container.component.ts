@@ -26,4 +26,8 @@ export class ChannelsContainerComponent implements OnInit {
     this.onChannelSelected.emit(channel);
   }
 
+  protected addChannel() {
+    console.log('adding a new channel...')
+  }
+
 }

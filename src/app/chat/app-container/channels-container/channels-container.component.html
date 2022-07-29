@@ -1,3 +1,12 @@
-<div *ngFor="let channel of channels">
-        <span (click)="selectChannel(channel)"> {{ channel.name }} </span>
+<ng-container *ngFor="let channel of channels">
+        <div class="channel-container"
+             (click)="selectChannel(channel)">
+                <img class="text-channel-image" src="../../../../assets/hashtag.png" />
+                <span> {{ channel.name }} </span>
+        </div>
+</ng-container>
+
+<div class="channel-container add-channel-container"
+     (click)="addChannel()">
+   <span> Add channel </span>
 </div>
