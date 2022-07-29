@@ -7,6 +7,7 @@ import {
 } from '@angular/core';
 
 import { Channel } from 'src/app/shared/interfaces/channel';
+import { Message } from 'src/app/shared/interfaces/message';
 
 @Component({
   selector: 'app-app-container',
@@ -15,6 +16,7 @@ import { Channel } from 'src/app/shared/interfaces/channel';
 })
 export class AppContainerComponent implements OnInit {
   @Input() channels: Channel[] = [];
+  @Input() messages: Message[] = [];
   @Output() onChannelSelected = new EventEmitter<Channel>();
 
   constructor() { }

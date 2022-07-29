@@ -2,4 +2,5 @@
 
 <app-app-container class="app-container"
                    [channels]="channels$ | async"
+                   [messages]="selectedChannelMessages$ | async"
                    (onChannelSelected)="selectChannel($event)"></app-app-container>
