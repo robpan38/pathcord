@@ -1,3 +1,8 @@
-<app-chat-container class="chat-container"></app-chat-container>
+<app-channels-container class="channels-container"
+                        [channels]="channels"
+                        (onChannelSelected)="selectChannel($event)"></app-channels-container>
+
+<app-chat-container     [messages]="messages"
+                        class="chat-container"></app-chat-container>
 
 <app-users-container class="users-container"></app-users-container>

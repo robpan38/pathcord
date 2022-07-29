@@ -1,16 +1,20 @@
 <div class="chat-header">
     <p class="chat-name">#Chat name placeholder</p>
 </div>
+
 <div class="messages-container">
-    <div class="message-container"></div>
-    <div class="message-container"></div>
-    <div class="message-container"></div>
-    <div class="message-container"></div>
-    <div class="message-container"></div>
-    <div class="message-container"></div>
-    <div class="message-container"></div>
-    <div class="message-container"></div>
+    <div *ngFor="let message of messages" 
+         class="message-container">
+        <div class="user-identity">
+            <img class="user-image" alt="user's profile image" />
+            <p class="user-name"></p>
+        </div>
+        <div class="user-message">
+            <p class="message">{{ message.content }}</p>
+        </div>
+    </div>
 </div>
+
 <div class="chat-input-container">
     <textarea class="chat-input"></textarea>
     <button class="chat-send-btn">Send</button>

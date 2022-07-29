@@ -1,4 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import {
+  Component,
+  Input,
+  OnInit,
+} from '@angular/core';
+
+import { Message } from 'src/app/shared/interfaces/message';
 
 @Component({
   selector: 'app-chat-container',
@@ -6,6 +12,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./chat-container.component.scss']
 })
 export class ChatContainerComponent implements OnInit {
+  @Input() messages: Message[] = [];
 
   constructor() { }
 

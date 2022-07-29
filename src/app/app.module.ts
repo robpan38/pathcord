@@ -9,6 +9,9 @@ import {
   AppContainerComponent,
 } from './chat/app-container/app-container.component';
 import {
+  ChannelsContainerComponent,
+} from './chat/app-container/channels-container/channels-container.component';
+import {
   ChatContainerComponent,
 } from './chat/app-container/chat-container/chat-container.component';
 import {
@@ -38,7 +41,8 @@ import {
     AppContainerComponent,
     HeaderContainerComponent,
     ChatContainerComponent,
-    UsersContainerComponent
+    UsersContainerComponent,
+    ChannelsContainerComponent
   ],
   imports: [
     BrowserModule,
