@@ -3,11 +3,15 @@
 </div>
 
 <div class="messages-container">
-    <div *ngFor="let message of messages" 
+    <div *ngFor="let message of messages"
+         [ngStyle]="{
+            'margin-left': currentUserId === message.senderId ? 'auto' : '3%',
+            'margin-right': currentUserId === message.senderId ? '3%' : '0%'    
+        }"
          class="message-container">
         <div class="user-identity">
-            <img class="user-image" alt="user's profile image" />
-            <p class="user-name"></p>
+            <img src="../../../../assets/user_pics/cat-pic.jpg" class="user-image" alt="user's profile image" />
+            <p class="user-name"> user{{ message.senderId }} </p>
         </div>
         <div class="user-message">
             <p class="message">{{ message.content }}</p>

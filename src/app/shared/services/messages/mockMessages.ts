@@ -6,7 +6,7 @@ export const mockMessages = [
           messageId: 1,
           senderId: 2,
           receiverId: 1,
-          content: 'salut general'
+          content: 'salut general ce faci salut general ce faci salut general ce faci salut general ce faci salut general ce faci salut general ce faci salut general ce faci salut general ce faci salut general ce faci salut general ce faci '
         },
         {
           messageId: 1,
