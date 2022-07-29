@@ -3,4 +3,5 @@
 <app-app-container class="app-container"
                    [channels]="channels$ | async"
                    [messages]="selectedChannelMessages$ | async"
+                   [users]="selectedChannelUsers$ | async"
                    (onChannelSelected)="selectChannel($event)"></app-app-container>

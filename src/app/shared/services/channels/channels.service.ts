@@ -1,6 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
+import { of } from 'rxjs';
+
 import { Channel } from '../../interfaces/channel';
 
 const BASE_URL = 'https://localhost:7234/api/1/channels'
@@ -28,8 +30,8 @@ export class ChannelsService {
       }
     ]
     
-    // return of<Channel[]>(debugChannels)
-    return this.http.get<Channel[]>(this.getUrl());
+    return of<Channel[]>(debugChannels)
+    // return this.http.get<Channel[]>(this.getUrl());
   }
 
   private getUrl() {
