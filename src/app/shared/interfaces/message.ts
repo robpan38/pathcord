@@ -4,7 +4,7 @@
  * content - the actual message the user sent
  */
 export interface Message {
-    messageId: number
+    messageId?: number
     senderId: number
     receiverId: number
     content: string

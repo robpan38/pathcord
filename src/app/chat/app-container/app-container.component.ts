@@ -18,6 +18,8 @@ import { User } from 'src/app/shared/interfaces/user';
 export class AppContainerComponent implements OnInit {
   @Input() channels: Channel[] = [];
   @Input() messages: Message[] = [];
+  @Input() currentUserId = 1;
+  @Input() currentChatId = 1;
   @Input() users: User[] = [];
   @Output() onChannelSelected = new EventEmitter<Channel>();
 
@@ -28,6 +30,10 @@ export class AppContainerComponent implements OnInit {
 
   protected selectChannel(channel: Channel) {
     this.onChannelSelected.emit(channel);
+  }
+
+  protected handleMessageSent(message: Message) {
+    console.log(message);
   }
 
 }
