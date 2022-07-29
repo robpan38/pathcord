@@ -8,6 +8,7 @@ import {
 
 import { Channel } from 'src/app/shared/interfaces/channel';
 import { Message } from 'src/app/shared/interfaces/message';
+import { User } from 'src/app/shared/interfaces/user';
 
 @Component({
   selector: 'app-app-container',
@@ -17,6 +18,7 @@ import { Message } from 'src/app/shared/interfaces/message';
 export class AppContainerComponent implements OnInit {
   @Input() channels: Channel[] = [];
   @Input() messages: Message[] = [];
+  @Input() users: User[] = [];
   @Output() onChannelSelected = new EventEmitter<Channel>();
 
   constructor() { }
