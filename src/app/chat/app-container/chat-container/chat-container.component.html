@@ -20,6 +20,14 @@
 </div>
 
 <div class="chat-input-container">
-    <textarea class="chat-input"></textarea>
-    <button class="chat-send-btn">Send</button>
+    <form
+            [formGroup]="messageForm"
+            class="message-form"
+            (ngSubmit)="handleSendMessage()">
+        <input
+            class="chat-input"
+            formControlName="message"
+        />
+        <button [disabled]="!messageForm.valid" type="submit" class="chat-send-btn">Send</button>
+    </form>
 </div>

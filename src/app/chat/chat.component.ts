@@ -33,6 +33,12 @@ export class ChatComponent implements OnInit {
 
   ngOnInit(): void {
     this.loadChannels();
+    // TODO: link the logged user to his user id
+    this.channels$.subscribe(
+      channels => this.selectedChannel$.next(channels[0])
+    );
+    this.loadMessages(this.selectedChannel$.value.channelId);
+    this.loadUsers(this.selectedChannel$.value.channelId);
   }
 
   protected selectChannel(channel: Channel) {
