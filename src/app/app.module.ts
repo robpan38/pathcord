@@ -33,6 +33,7 @@ import {
 import {
   LogoContainerComponent,
 } from './login/logo-container/logo-container.component';
+import { AddChannelContainerComponent } from './chat/app-container/add-channel-container/add-channel-container.component';
 
 @NgModule({
   declarations: [
@@ -45,7 +46,8 @@ import {
     HeaderContainerComponent,
     ChatContainerComponent,
     UsersContainerComponent,
-    ChannelsContainerComponent
+    ChannelsContainerComponent,
+    AddChannelContainerComponent
   ],
   imports: [
     BrowserModule,
