@@ -4,6 +4,10 @@ import {
   Input,
   Output,
 } from '@angular/core';
+import {
+  FormBuilder,
+  Validators,
+} from '@angular/forms';
 
 const chatRoute: string = '/chat'
 
@@ -17,4 +21,10 @@ export class LoginInputContainerComponent {
   @Input() inputIsValid: boolean = false;
   @Output() onInputEvent = new EventEmitter();
   @Output() onClickEvent = new EventEmitter();
+
+  loginForm = this.fb.group({
+    username: ['', Validators.required]
+  })
+
+  constructor(private fb: FormBuilder) { }
 }
