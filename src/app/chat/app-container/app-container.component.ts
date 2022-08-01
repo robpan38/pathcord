@@ -22,12 +22,18 @@ export class AppContainerComponent implements OnInit {
   @Input() currentUserId = 1;
   @Input() currentChatId = 1;
   @Input() users: User[] = [];
+  @Input() showAddChannelScreen = false;
   @Output() onChannelSelected = new EventEmitter<Channel>();
   @Output() messageSent = new EventEmitter<Message>();
+  @Output() onAddChannel = new EventEmitter<Channel>();
 
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  protected addChannel() {
+    this.onAddChannel.emit();
   }
 
   protected selectChannel(channel: Channel) {

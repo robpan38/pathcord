@@ -31,6 +31,8 @@ export class ChatComponent implements OnInit {
   public selectedChannelMessages$: Observable<Message[]>;
   public selectedChannelUsers$: Observable<User[]>;
 
+  public isAddingChannels = false;
+
   constructor( private http: HttpClient, private channelsService: ChannelsService,
                private messagesService: MessagesService, private usersService: UsersService ) { }
 
@@ -38,6 +40,7 @@ export class ChatComponent implements OnInit {
     this.loadChannels(this.getCurrentUserId());
 
     // TODO: link the logged user to his user id
+    this.isAddingChannels = false;
     this.channels$.subscribe(
       channels => {
         this.selectedChannel$.next(channels[0]);
@@ -49,7 +52,12 @@ export class ChatComponent implements OnInit {
     this.currentUserId = this.getCurrentUserId();
   }
 
+  protected addChannel() {
+    this.isAddingChannels = true;
+  }
+
   protected selectChannel(channel: Channel) {
+    this.isAddingChannels = false;
     console.log('i\'m here :)', channel);
     this.selectedChannel$.next(channel);
     this.loadMessages(channel.channelId);
