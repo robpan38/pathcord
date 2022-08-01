@@ -5,4 +5,6 @@
                    [channels]="channels$ | async"
                    [messages]="selectedChannelMessages$ | async"
                    [users]="selectedChannelUsers$ | async"
-                   (onChannelSelected)="selectChannel($event)"></app-app-container>
+                   [showAddChannelScreen]="isAddingChannels"
+                   (onChannelSelected)="selectChannel($event)"
+                   (onAddChannel)="addChannel()"></app-app-container>

@@ -16,6 +16,7 @@ import { Channel } from 'src/app/shared/interfaces/channel';
 export class ChannelsContainerComponent implements OnInit {
   @Input() channels: Channel[] = [];
   @Output() onChannelSelected = new EventEmitter<Channel>();
+  @Output() onAddChannel = new EventEmitter<Channel>();
 
   constructor() { }
 
@@ -27,7 +28,7 @@ export class ChannelsContainerComponent implements OnInit {
   }
 
   protected addChannel() {
-    console.log('adding a new channel...')
+    this.onAddChannel.emit();
   }
 
 }

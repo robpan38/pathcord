@@ -1,10 +1,17 @@
 <app-channels-container class="channels-container"
                         [channels]="channels"
-                        (onChannelSelected)="selectChannel($event)"></app-channels-container>
+                        (onChannelSelected)="selectChannel($event)"
+                        (onAddChannel)="addChannel()"></app-channels-container>
 
-<app-chat-container     [messages]="messages"
+<ng-container *ngIf="!showAddChannelScreen; else addChannelSection">
+    <app-chat-container [messages]="messages"
                         (messageSent)="handleMessageSent($event)"
                         class="chat-container"></app-chat-container>
+</ng-container>
+
+<ng-template #addChannelSection>
+    <app-add-channel-container class="chat-container"></app-add-channel-container>
+</ng-template>
 
 <app-users-container class="users-container"
                      [users]="users"></app-users-container>
