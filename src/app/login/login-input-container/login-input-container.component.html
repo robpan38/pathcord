@@ -1,7 +1,14 @@
-<div class="login-input-container">
+<form [formGroup]="loginForm"
+      (ngSubmit)="onClickEvent.emit()"
+      class="login-input-container">
     <input class="login-input-field" placeholder="Enter username here..."
-        (input)="onInputEvent.emit(inputValue)" name="loginInput" [(ngModel)]="inputValue" />
-    <button (click)="onClickEvent.emit()" [className]="inputIsValid ? 'active-login-btn login-btn' : 'login-btn'">
+            (input)="this.onInputEvent.emit(loginForm.get('username').value)"
+            name="loginInput"
+            formControlName="username" />
+    <button [className]="inputIsValid ? 'active-login-btn login-btn' : 'login-btn'"
+            [disabled]="!loginForm.valid"
+            type="submit">
         Login
     </button>
-</div>
+</form>
+
