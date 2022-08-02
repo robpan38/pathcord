@@ -11,7 +11,10 @@
          class="message-container">
         <div class="user-identity">
             <img src="../../../../assets/user_pics/cat-pic.jpg" class="user-image" alt="user's profile image" />
-            <p class="user-name"> user{{ message.senderId }} </p>
+            <p *ngIf="currentUserId !== message.senderId; else elseBlock" class="user-name"> user{{ message.senderId }} </p>
+            <ng-template #elseBlock>
+                <p class="user-name"> {{ getUsernameById(currentUserId) | async }} </p>
+            </ng-template>
         </div>
         <div class="user-message">
             <p class="message">{{ message.content }}</p>

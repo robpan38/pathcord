@@ -1,8 +1,10 @@
 <app-header-container class="header-container"></app-header-container>
 
 <app-app-container class="app-container"
+                   [currentUserId]="currentUserId"
                    [currentChatId]="(selectedChannel$ | async).channelId"
                    [channels]="channels$ | async"
                    [messages]="selectedChannelMessages$ | async"
                    [users]="selectedChannelUsers$ | async"
+                   (messageSent)="handleMessageSent($event)"
                    (onChannelSelected)="selectChannel($event)"></app-app-container>

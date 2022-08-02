@@ -22,6 +22,7 @@ export class AppContainerComponent implements OnInit {
   @Input() currentChatId = 1;
   @Input() users: User[] = [];
   @Output() onChannelSelected = new EventEmitter<Channel>();
+  @Output() messageSent = new EventEmitter<Message>();
 
   constructor() { }
 
@@ -33,7 +34,7 @@ export class AppContainerComponent implements OnInit {
   }
 
   protected handleMessageSent(message: Message) {
-    console.log(message);
+    this.messageSent.emit(message);
   }
 
 }

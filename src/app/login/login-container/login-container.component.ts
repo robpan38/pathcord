@@ -4,6 +4,8 @@ import {
 } from '@angular/core';
 import { Router } from '@angular/router';
 
+import { UsersService } from 'src/app/shared/services/users/users.service';
+
 const chatRoute: string = "/chat";
 @Component({
   selector: 'app-login-container',
@@ -11,7 +13,7 @@ const chatRoute: string = "/chat";
   styleUrls: ['./login-container.component.scss']
 })
 export class LoginContainerComponent implements OnInit {
-  constructor(private router: Router) { }
+  constructor(private router: Router, private usersService: UsersService) { }
 
   ngOnInit(): void {
   }
@@ -23,9 +25,18 @@ export class LoginContainerComponent implements OnInit {
     this.inputIsValid = value !== '';
   }
 
-  goToChat(): void {
+  goToChat(formValue: string): void {
     if (this.inputIsValid) {
-      this.router.navigateByUrl(chatRoute);
+      let userId = this.usersService.getIdOfUser(formValue);
+      userId.subscribe(id => {
+        if (id !== -1) {
+          this.usersService.loggedUserId = id;
+
+          this.router.navigateByUrl(chatRoute);
+        } else {
+          // TODO: handle user not found
+        }
+      })
     }
   }
 }
