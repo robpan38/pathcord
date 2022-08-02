@@ -2,7 +2,9 @@
                         [channels]="channels"
                         (onChannelSelected)="selectChannel($event)"></app-channels-container>
 
-<app-chat-container     [messages]="messages"
+<app-chat-container     [currentUserId]="currentUserId"
+                        [currentChatId]="currentChatId"
+                        [messages]="messages"
                         (messageSent)="handleMessageSent($event)"
                         class="chat-container"></app-chat-container>
 
