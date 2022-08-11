@@ -1,12 +1,37 @@
-.header-text {
-    font-size: 2rem;
-    margin-left: 2.5%;
-    text-transform: uppercase;
-    color: var(--pretty-orange);
-}
+app-header-container {
+    display: flex;
 
-.header-logo {
-    height: 125px;
-    width: 135px;
-    padding-top: 28px;
+    .header-text {
+        font-size: 2rem;
+        margin-left: 2.5%;
+        text-transform: uppercase;
+        color: var(--pretty-orange);
+    }
+    
+    .header-logo {
+        height: 125px;
+        width: 135px;
+        padding-top: 28px;
+    }
+
+    .back-btn {
+        margin-left: auto;
+        margin-right: 20px;
+
+        height: 60%;
+        width: 60px;
+        
+        border-radius: 0;
+        border-width: 0;
+
+        cursor: pointer;
+
+        &:hover {
+            background-color: rgb(169, 169, 169);
+        }
+
+        &:active {
+            background-color: rgb(139, 139, 139);
+        }
+    }
 }

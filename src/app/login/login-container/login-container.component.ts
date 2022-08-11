@@ -26,17 +26,19 @@ export class LoginContainerComponent implements OnInit {
   }
 
   goToChat(formValue: string): void {
-    if (this.inputIsValid) {
-      let userId = this.usersService.getIdOfUser(formValue);
-      userId.subscribe(id => {
-        if (id !== -1) {
-          this.usersService.loggedUserId = id;
-
-          this.router.navigateByUrl(chatRoute);
-        } else {
-          // TODO: handle user not found
-        }
-      })
+    if (!this.inputIsValid) {
+      return;
     }
+    
+    let userId = this.usersService.getIdOfUser(formValue);
+    userId.subscribe(id => {
+      if (id !== -1) {
+        this.usersService.loggedUserId = id;
+
+        this.router.navigateByUrl(chatRoute);
+      } else {
+        // TODO: handle user not found
+      }
+    })
   }
 }
