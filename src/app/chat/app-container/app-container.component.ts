@@ -16,6 +16,7 @@ import { User } from 'src/app/shared/interfaces/user';
   styleUrls: ['./app-container.component.scss']
 })
 export class AppContainerComponent implements OnInit {
+  @Input() selectedChannel: Channel;
   @Input() channels: Channel[] = [];
   @Input() messages: Message[] = [];
   @Input() currentUserId = 1;
