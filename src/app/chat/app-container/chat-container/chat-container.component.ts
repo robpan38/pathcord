@@ -9,7 +9,9 @@ import {
   Validators,
 } from '@angular/forms';
 
+import { Observable } from 'rxjs';
 import { Message } from 'src/app/shared/interfaces/message';
+import { UsersService } from 'src/app/shared/services/users/users.service';
 
 @Component({
   selector: 'app-chat-container',
@@ -22,7 +24,7 @@ export class ChatContainerComponent {
   @Input() messages: Message[] = [];
   @Output() messageSent = new EventEmitter();
 
-  constructor(private fb: FormBuilder) { }
+  constructor(private fb: FormBuilder, private usersService: UsersService) { }
 
   messageForm = this.fb.group({
     message: ['', Validators.required]
@@ -35,5 +37,9 @@ export class ChatContainerComponent {
       content: this.messageForm.value?.message
     })
     this.messageForm.setValue({ message: '' });
+  }
+
+  public getUsernameById(userId: number): Observable<string> {
+    return this.usersService.getUsernameById(userId);
   }
 }

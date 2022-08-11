@@ -23,6 +23,7 @@ const baseUrl: string = 'https://swapi.dev/api/people/1'; // 'https://localhost:
   styleUrls: ['./chat.component.scss']
 })
 export class ChatComponent implements OnInit {
+  public currentUserId: number = -1;
   public channels$: Observable<Channel[]>;
   public selectedChannel$: BehaviorSubject<Channel> = new BehaviorSubject(null);
   public selectedChannelMessages$: Observable<Message[]>;
@@ -39,6 +40,7 @@ export class ChatComponent implements OnInit {
     );
     this.loadMessages(this.selectedChannel$.value.channelId);
     this.loadUsers(this.selectedChannel$.value.channelId);
+    this.currentUserId = this.getCurrentUserId();
   }
 
   protected selectChannel(channel: Channel) {
@@ -57,7 +59,15 @@ export class ChatComponent implements OnInit {
   }
 
   private loadUsers(channelId: number): void {
-    this.selectedChannelUsers$ = this.usersService.getAllUsers(channelId);
+    this.selectedChannelUsers$ = this.usersService.getAllUsers();
   }
 
+  private getCurrentUserId(): number {
+    return this.usersService.loggedUserId;
+  }
+
+  public handleMessageSent(message: Message):void {
+    this.messagesService.addMessage(message);
+    this.loadMessages(this.selectedChannel$.value.channelId);
+  }
 }

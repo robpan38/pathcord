@@ -1,5 +1,5 @@
 <form [formGroup]="loginForm"
-      (ngSubmit)="onClickEvent.emit()"
+      (ngSubmit)="onClickEvent.emit(loginForm.get('username').value)"
       class="login-input-container">
     <input class="login-input-field" placeholder="Enter username here..."
             (input)="this.onInputEvent.emit(loginForm.get('username').value)"
