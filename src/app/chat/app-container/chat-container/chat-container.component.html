@@ -5,19 +5,19 @@
 <div class="messages-container">
     <div *ngFor="let message of messages"
          [ngStyle]="{
-            'margin-left': currentUserId === message.senderId ? 'auto' : '3%',
-            'margin-right': currentUserId === message.senderId ? '3%' : '0%'    
+            'margin-left': currentUserId === message.userId ? 'auto' : '3%',
+            'margin-right': currentUserId === message.userId ? '3%' : '0%'    
         }"
          class="message-container">
         <div class="user-identity">
             <img src="../../../../assets/user_pics/cat-pic.jpg" class="user-image" alt="user's profile image" />
-            <p *ngIf="currentUserId !== message.senderId; else elseBlock" class="user-name"> user{{ message.senderId }} </p>
+            <p *ngIf="currentUserId !== message.userId; else elseBlock" class="user-name"> {{ message.username || '' }} </p>
             <ng-template #elseBlock>
-                <p class="user-name"> {{ getUsernameById(currentUserId) | async }} </p>
+                <p class="user-name"> {{ message.username || '' }} <!-- {{ getUsernameById(message.userId) | async }} --> </p>
             </ng-template>
         </div>
         <div class="user-message">
-            <p class="message">{{ message.content }}</p>
+            <p class="message">{{ message.text }}</p>
         </div>
     </div>
 </div>
