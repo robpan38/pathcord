@@ -2,13 +2,13 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
 import {
-  BehaviorSubject,
   catchError,
   map,
   Observable,
 } from 'rxjs';
 
 import { User } from '../../interfaces/user';
+import { LocalService } from '../local.service';
 
 const BASE_URL = 'https://localhost:7234/api/user'
 
@@ -17,16 +17,18 @@ const BASE_URL = 'https://localhost:7234/api/user'
 })
 export class UsersService {
 
-  constructor(private http: HttpClient) { }
-
-  private _loggedUserId: BehaviorSubject<number> = new BehaviorSubject(-1);
+  constructor(private http: HttpClient, private local: LocalService) { }
 
   get loggedUserId(): number {
-    return this._loggedUserId.value;
+    let maybeUserId = this.local.getData('userId');
+    if (maybeUserId) {
+      return Number.parseInt(maybeUserId);
+    }
+    return -1;
   }
 
   set loggedUserId(userId: number) {
-    this._loggedUserId.next(userId);
+    this.local.setData('userId', userId.toString());
   }
 
   public getIdOfUser(username: string): Observable<User> {
