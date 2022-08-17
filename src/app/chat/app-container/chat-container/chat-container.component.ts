@@ -22,12 +22,16 @@ import { UsersService } from 'src/app/shared/services/users/users.service';
   styleUrls: ['./chat-container.component.scss'],
 })
 export class ChatContainerComponent {
+  @Input() selectedChannel: Channel;
   @Input() currentUserId: number = 1;
   @Input() currentChatId: number = 1;
   @Input() messages: Message[] = [];
   @Output() messageSent = new EventEmitter();
 
-  constructor(private fb: FormBuilder, private usersService: UsersService) { }
+  constructor(
+    private fb: FormBuilder, 
+    private usersService: UsersService,
+  ) { }
 
   messageForm = this.fb.group({
     message: ['', Validators.required]

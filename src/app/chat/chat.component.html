@@ -1,6 +1,7 @@
 <app-header-container class="header-container"></app-header-container>
 
 <app-app-container class="app-container"
+                   [selectedChannel]="selectedChannel$ | async"
                    [currentUserId]="currentUserId"
                    [currentChatId]="(selectedChannel$ | async)?.channelId"
                    [channels]="channels$ | async"

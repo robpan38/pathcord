@@ -74,8 +74,7 @@ export class ChatComponent implements OnInit {
               }, new Set<number>()
             )
 
-            // Go through each element in the set, create a request for it
-            // and add it to a map
+            // Go through each element in the set and create a request for it
             userIdSet.forEach(
               (id) => this.usersService.getUsernameById(id).subscribe(
                 name => {
