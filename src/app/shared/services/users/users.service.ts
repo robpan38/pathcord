@@ -6,7 +6,6 @@ import {
   catchError,
   map,
   Observable,
-  of,
 } from 'rxjs';
 
 import { User } from '../../interfaces/user';
@@ -20,7 +19,6 @@ export class UsersService {
 
   constructor(private http: HttpClient) { }
 
-  // TODO: make a more realistic mock of the users data
   private _loggedUserId: BehaviorSubject<number> = new BehaviorSubject(-1);
 
   get loggedUserId(): number {
@@ -31,30 +29,6 @@ export class UsersService {
     this._loggedUserId.next(userId);
   }
 
-  public getAllUsers() {
-    const debugUsers: User[] = [{
-        userId: 1,
-        name: 'Vali Vijelieeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee'
-      }, {
-        userId: 2,
-        name: 'Mohnea'
-      }, {
-        userId: 3,
-        name: 'Robrob'
-      }, {
-        userId: 4,
-        name: 'Dominiq'
-      }, {
-        userId: 5,
-        name: 'Random-user123'
-      }
-    ]
-    
-    // TODO: Replace with a GET request when possible on BE
-    return of<User[]>(debugUsers)
-    // return this.http.get<User[]>(this.getUrl());
-  }
-
   public getIdOfUser(username: string): Observable<User> {
     const FIND_BY_NAME_URL = '/byName'
 
@@ -62,19 +36,17 @@ export class UsersService {
   }
 
   public getUsernameById(userId: number): Observable<string> {
-    // let user: User;
-    
-    // this.getAllUsers().subscribe(
-    //   users => user = users.find(user => user.userId === userId)
-    // )
-
-    // return of(user.name);
-    
     return this.http.get<User>(this.getUrl() + `?userId=${userId}`)
       .pipe(
         map(user => user.name),
         catchError(_ => '')
       );
+  }
+
+  public getUsersOfChannel(channelId: number) {
+    return this.http.get<User[]>(
+      this.getUrl() + '/subscriptions/subscribers' + `?channelId=${channelId}`
+    );
   }
 
   private getUrl() {

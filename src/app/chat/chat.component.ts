@@ -100,7 +100,7 @@ export class ChatComponent implements OnInit {
   }
 
   private loadUsers(channelId: number): void {
-    this.selectedChannelUsers$ = this.usersService.getAllUsers();
+    this.selectedChannelUsers$ = this.usersService.getUsersOfChannel(channelId);
   }
 
   private getCurrentUserId(): number {
