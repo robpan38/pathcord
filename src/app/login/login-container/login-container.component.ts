@@ -29,16 +29,20 @@ export class LoginContainerComponent implements OnInit {
     if (!this.inputIsValid) {
       return;
     }
-    
-    let userId = this.usersService.getIdOfUser(formValue);
-    userId.subscribe(id => {
-      if (id !== -1) {
-        this.usersService.loggedUserId = id;
 
-        this.router.navigateByUrl(chatRoute);
-      } else {
-        // TODO: handle user not found
-      }
+    this.usersService.getIdOfUser(formValue)
+      .subscribe({
+        next: ({name, userId}) => {
+          if (userId !== -1) {
+            this.usersService.loggedUserId = userId;
+
+            this.router.navigateByUrl(chatRoute);
+          }
+        },
+        error: e => {
+          // TODO: handle username not found
+          console.log(e);
+        }
     })
   }
 }

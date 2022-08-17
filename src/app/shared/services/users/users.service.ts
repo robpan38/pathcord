@@ -55,24 +55,10 @@ export class UsersService {
     // return this.http.get<User[]>(this.getUrl());
   }
 
-  public getIdOfUser(username: string): Observable<number> {
-    let id;
+  public getIdOfUser(username: string): Observable<User> {
+    const FIND_BY_NAME_URL = '/byName'
 
-    this.http.get<User>(this.getUrl() + "?userId=1").subscribe(console.log);
-
-    this.getAllUsers().subscribe(
-      users => {
-        let user = users.find(user => user.name === username);
-        
-        if (user) {
-          id = user.userId;
-        } else {
-          id = -1;
-        }
-      }
-    )
-
-    return of<number>(id);
+    return this.http.get<User>(this.getUrl() + FIND_BY_NAME_URL + `?userName=${username}`);
   }
 
   public getUsernameById(userId: number): Observable<string> {
