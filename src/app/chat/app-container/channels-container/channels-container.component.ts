@@ -14,6 +14,7 @@ import { Channel } from 'src/app/shared/interfaces/channel';
   styleUrls: ['./channels-container.component.scss']
 })
 export class ChannelsContainerComponent implements OnInit {
+  @Input() currentUserId: number = -1;
   @Input() channels: Channel[] = [];
   @Output() onChannelSelected = new EventEmitter<Channel>();
   @Output() onAddChannel = new EventEmitter<Channel>();

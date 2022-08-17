@@ -1,33 +1,8 @@
 <div class="add-channels-container">
-    <form class="add-channel-input">
-        <input placeholder="Search">
+    <form (ngSubmit)="handleAddNewChannel(addChannelForm.value.channelName)"
+          [formGroup]="addChannelForm"
+          class="add-channel-input">
+        <input formControlName="channelName" placeholder="Search">
+        <button type="submit" [disabled]="!addChannelForm.valid">Add channel</button>
     </form>
-    
-    <div>
-        hello world
-    </div>
-    
-    <div>
-        hello world
-    </div>
-    
-    <div>
-        hello world
-    </div>
-    
-    <div>
-        hello world
-    </div>
-    
-    <div>
-        hello world
-    </div>
-    
-    <div>
-        hello world
-    </div>
-    
-    <div>
-        hello world
-    </div>
 </div>

@@ -26,10 +26,15 @@ export class AppContainerComponent implements OnInit {
   @Output() onChannelSelected = new EventEmitter<Channel>();
   @Output() messageSent = new EventEmitter<Message>();
   @Output() onAddChannel = new EventEmitter<Channel>();
+  @Output() onAddNewChannel = new EventEmitter<string>();
 
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  public handleAddNewChannel(channelName: string): void {
+    this.onAddNewChannel.emit(channelName);
   }
 
   protected addChannel() {

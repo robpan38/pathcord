@@ -1,5 +1,6 @@
 <app-channels-container class="channels-container"
                         [channels]="channels"
+                        [currentUserId]="currentUserId"
                         (onChannelSelected)="selectChannel($event)"
                         (onAddChannel)="addChannel()"></app-channels-container>
 
@@ -13,7 +14,9 @@
 </ng-container>
 
 <ng-template #addChannelSection>
-    <app-add-channel-container class="chat-container"></app-add-channel-container>
+    <app-add-channel-container 
+        (onAddNewChannel)="handleAddNewChannel($event)"    
+        class="chat-container"></app-add-channel-container>
 </ng-template>
 
 <app-users-container class="users-container"

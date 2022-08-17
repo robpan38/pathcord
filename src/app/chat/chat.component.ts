@@ -6,8 +6,11 @@ import {
 
 import {
   BehaviorSubject,
+  forkJoin,
   map,
   Observable,
+  of,
+  switchMap,
   tap,
 } from 'rxjs';
 
@@ -16,6 +19,9 @@ import { Message } from '../shared/interfaces/message';
 import { User } from '../shared/interfaces/user';
 import { ChannelsService } from '../shared/services/channels/channels.service';
 import { MessagesService } from '../shared/services/messages/messages.service';
+import {
+  SubscriptionsService,
+} from '../shared/services/users/subscriptions.service';
 import { UsersService } from '../shared/services/users/users.service';
 
 const baseUrl: string = 'https://swapi.dev/api/people/1'; // 'https://localhost:7234/api/1/channels';
@@ -34,7 +40,8 @@ export class ChatComponent implements OnInit {
   public isAddingChannels = false;
 
   constructor( private http: HttpClient, private channelsService: ChannelsService,
-               private messagesService: MessagesService, private usersService: UsersService ) { }
+               private messagesService: MessagesService, private usersService: UsersService,
+               private subscriptionsService: SubscriptionsService ) { }
 
   ngOnInit(): void {
     this.loadChannels(this.getCurrentUserId());
@@ -52,8 +59,29 @@ export class ChatComponent implements OnInit {
     this.currentUserId = this.getCurrentUserId();
   }
 
+  public addNewChannel(channelName: string): void {
+    // add the newly created channel to the list of channels
+    let createdChannelId;
+
+    forkJoin({
+      channels: this.channels$,
+      createdChannel: this.channelsService.createChannel(channelName)
+    })
+      .pipe(
+        switchMap(({channels, createdChannel}) => {
+          this.channels$ = of([...channels, createdChannel]);
+          createdChannelId = createdChannel.channelId;
+
+          return this.subscriptionsService.subscribeToChannel(this.currentUserId, createdChannelId);
+        })
+      )
+      .subscribe()
+    
+    this.isAddingChannels = !this.isAddingChannels;
+  }
+
   protected addChannel() {
-    this.isAddingChannels = true;
+    this.isAddingChannels = !this.isAddingChannels;
   }
 
   protected selectChannel(channel: Channel) {
