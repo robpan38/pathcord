@@ -14,23 +14,18 @@ export class ChannelsService {
   constructor(private http: HttpClient) { }
 
   public getAllChannels() {
-    // const debugChannels: Channel[] = [{
-    //     channelId: 1,
-    //     name: 'general'
-    //   }, {
-    //     channelId: 2,
-    //     name: 'party'
-    //   }, {
-    //     channelId: 3,
-    //     name: 'chill'
-    //   }, {
-    //     channelId: 4,
-    //     name: 'bots'
-    //   }
-    // ]
-    
-    // return of<Channel[]>(debugChannels)
     return this.http.get<Channel[]>(this.getUrl() + '/getAll');
+  }
+
+  public getAllChannelsOfUser(userId: number) {
+    return this.http.get<Channel[]>(
+      BASE_URL + '/user/subscriptions/getAll',
+      {
+        params: {
+          userId: userId
+        }
+      }
+    );
   }
 
   private getUrl() {
