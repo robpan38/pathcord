@@ -6,7 +6,9 @@ import {
 
 import {
   BehaviorSubject,
+  map,
   Observable,
+  tap,
 } from 'rxjs';
 
 import { Channel } from '../shared/interfaces/channel';
@@ -34,12 +36,16 @@ export class ChatComponent implements OnInit {
 
   ngOnInit(): void {
     this.loadChannels();
+
     // TODO: link the logged user to his user id
     this.channels$.subscribe(
-      channels => this.selectedChannel$.next(channels[0])
+      channels => {
+        this.selectedChannel$.next(channels[0]);
+        this.loadMessages(this.selectedChannel$.value.channelId);
+        this.loadUsers(this.selectedChannel$.value.channelId);
+      }
     );
-    this.loadMessages(this.selectedChannel$.value.channelId);
-    this.loadUsers(this.selectedChannel$.value.channelId);
+
     this.currentUserId = this.getCurrentUserId();
   }
 
@@ -55,7 +61,43 @@ export class ChatComponent implements OnInit {
   }
 
   private loadMessages(channelId: number): void {
-    this.selectedChannelMessages$ = this.messagesService.loadMessages(channelId);
+    this.selectedChannelMessages$ = this.messagesService
+      .loadMessages(channelId)
+      .pipe(
+        map(messages => {
+            // Get all user IDs from all messages, put them in a set and
+            // request only those IDs
+            const userIdSet: Set<number> = messages
+              .map(message => message.userId)
+              .reduce((userIdSet: Set<number>, userId: number) => {
+                return userIdSet.add(userId)
+              }, new Set<number>()
+            )
+
+            // Go through each element in the set, create a request for it
+            // and add it to a map
+            userIdSet.forEach(
+              (id) => this.usersService.getUsernameById(id).subscribe(
+                name => {
+                  // Go through all messages and set the usernames for the
+                  // ones with the newly received ID
+                  messages.forEach(
+                    (message, index) => {
+                      if (message.userId !== id) {
+                        return;
+                      }
+
+                      messages[index].username = name;
+                    }
+                  )
+                }
+              )
+            )
+
+            return messages
+        }),
+        tap(res => console.log('loading messages...', res))
+      );
   }
 
   private loadUsers(channelId: number): void {

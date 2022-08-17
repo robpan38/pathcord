@@ -1,11 +1,10 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
-import { of } from 'rxjs';
-
 import { Channel } from '../../interfaces/channel';
+import { BASE_URL } from '../service-constants';
 
-const BASE_URL = 'https://localhost:7234/api/1/channels'
+const BASE_ROUTE = "/channel"
 
 @Injectable({
   providedIn: 'root'
@@ -15,26 +14,26 @@ export class ChannelsService {
   constructor(private http: HttpClient) { }
 
   public getAllChannels() {
-    const debugChannels: Channel[] = [{
-        channelId: 1,
-        name: 'general'
-      }, {
-        channelId: 2,
-        name: 'party'
-      }, {
-        channelId: 3,
-        name: 'chill'
-      }, {
-        channelId: 4,
-        name: 'bots'
-      }
-    ]
+    // const debugChannels: Channel[] = [{
+    //     channelId: 1,
+    //     name: 'general'
+    //   }, {
+    //     channelId: 2,
+    //     name: 'party'
+    //   }, {
+    //     channelId: 3,
+    //     name: 'chill'
+    //   }, {
+    //     channelId: 4,
+    //     name: 'bots'
+    //   }
+    // ]
     
-    return of<Channel[]>(debugChannels)
-    // return this.http.get<Channel[]>(this.getUrl());
+    // return of<Channel[]>(debugChannels)
+    return this.http.get<Channel[]>(this.getUrl() + '/getAll');
   }
 
   private getUrl() {
-    return BASE_URL;
+    return BASE_URL + BASE_ROUTE;
   }
 }

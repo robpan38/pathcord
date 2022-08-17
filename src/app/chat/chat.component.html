@@ -2,7 +2,7 @@
 
 <app-app-container class="app-container"
                    [currentUserId]="currentUserId"
-                   [currentChatId]="(selectedChannel$ | async).channelId"
+                   [currentChatId]="(selectedChannel$ | async)?.channelId"
                    [channels]="channels$ | async"
                    [messages]="selectedChannelMessages$ | async"
                    [users]="selectedChannelUsers$ | async"

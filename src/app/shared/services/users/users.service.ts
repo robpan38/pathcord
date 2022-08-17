@@ -3,13 +3,15 @@ import { Injectable } from '@angular/core';
 
 import {
   BehaviorSubject,
+  catchError,
+  map,
   Observable,
   of,
 } from 'rxjs';
 
 import { User } from '../../interfaces/user';
 
-const BASE_URL = 'https://localhost:7234/api/1/users'
+const BASE_URL = 'https://localhost:7234/api/user'
 
 @Injectable({
   providedIn: 'root'
@@ -48,12 +50,15 @@ export class UsersService {
       }
     ]
     
+    // TODO: Replace with a GET request when possible on BE
     return of<User[]>(debugUsers)
     // return this.http.get<User[]>(this.getUrl());
   }
 
   public getIdOfUser(username: string): Observable<number> {
     let id;
+
+    this.http.get<User>(this.getUrl() + "?userId=1").subscribe(console.log);
 
     this.getAllUsers().subscribe(
       users => {
@@ -71,13 +76,19 @@ export class UsersService {
   }
 
   public getUsernameById(userId: number): Observable<string> {
-    let user: User;
+    // let user: User;
     
-    this.getAllUsers().subscribe(
-      users => user = users.find(user => user.userId === userId)
-    )
+    // this.getAllUsers().subscribe(
+    //   users => user = users.find(user => user.userId === userId)
+    // )
 
-    return of(user.name);
+    // return of(user.name);
+    
+    return this.http.get<User>(this.getUrl() + `?userId=${userId}`)
+      .pipe(
+        map(user => user.name),
+        catchError(_ => '')
+      );
   }
 
   private getUrl() {
