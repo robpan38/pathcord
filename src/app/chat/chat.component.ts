@@ -35,7 +35,7 @@ export class ChatComponent implements OnInit {
                private messagesService: MessagesService, private usersService: UsersService ) { }
 
   ngOnInit(): void {
-    this.loadChannels();
+    this.loadChannels(this.getCurrentUserId());
 
     // TODO: link the logged user to his user id
     this.channels$.subscribe(
@@ -56,8 +56,8 @@ export class ChatComponent implements OnInit {
     this.loadUsers(channel.channelId);
   }
 
-  private loadChannels(): void {
-    this.channels$ = this.channelsService.getAllChannels();
+  private loadChannels(userId: number): void {
+    this.channels$ = this.channelsService.getAllChannelsOfUser(userId);
   }
 
   private loadMessages(channelId: number): void {
