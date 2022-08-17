@@ -13,6 +13,7 @@ import {
   Observable,
   of,
 } from 'rxjs';
+import { Channel } from 'src/app/shared/interfaces/channel';
 import { Message } from 'src/app/shared/interfaces/message';
 import { UsersService } from 'src/app/shared/services/users/users.service';
 
