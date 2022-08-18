@@ -1,0 +1,32 @@
+.add-channels-container {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+
+    margin-top: 5%;
+
+    form {
+        display: flex;
+        justify-content: center;
+        column-gap: 5%;
+    }
+
+    .add-channel-input input, button {
+        height: 40px;
+        font-family: 'MuseoModerno', cursive;
+        font-size: 1.2rem;
+    }
+
+    .add-channel-input input {
+        padding-left: 5%;
+    }
+
+    button {
+        width: 200px;
+        text-transform: uppercase;
+        border-radius: 0;
+        border-width: 1px;
+        cursor: pointer;
+    }
+}
